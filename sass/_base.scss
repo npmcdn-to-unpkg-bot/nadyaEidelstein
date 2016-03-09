@@ -1,13 +1,10 @@
 .name {
-   // @include break(0, 920px) {
-   //    display: none;
-   // }
    background: white;
    z-index: 10;
-   position: absolute;
+   position: fixed;
    top: 0;
    width: 100%;
-   // height: 100%;
+   height: 100vh;
    text-align: center;
    img {
       cursor: pointer;
@@ -105,17 +102,25 @@ body {
       }
    }
 }
-// #main {
-//    display: none;
-// }
+
 .main {
    position: relative;
    top: 11em;
+   @include break-media(920px, 1400px) {
+      max-width: 75%;
+   }
+   // @include break(920px, 1400px) {
+   //    max-width: 75%;
+   // }
+   @include break-media(0, 920px) {
+      max-width: 90%;
+      top: 10em;
+   }
    @include break(0, 920px) {
       max-width: 90%;
       top: 10em;
    }
-   max-width: 75%;
+   max-width: 55%;
    margin-top: 2.5em;
    margin-right: auto;
    margin-left: auto;

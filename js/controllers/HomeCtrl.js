@@ -5,7 +5,6 @@ function HomeCtrl($routeParams, $location, worksService) {
 	this.currentPath = $location.path();
 	this.worksService = worksService;
 	this.works = this.worksService.getWorks();
-	console.log(this.currentPath);
     this.headerVisible = true;
 }
 

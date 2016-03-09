@@ -4,18 +4,15 @@ app.controller('MainCtrl', MainCtrl);
 
 function MainCtrl($scope, $routeParams, $location) {
     this.currentPath = $location.path();
-	// console.log(this.currentPath);
     this.visible = true;
-    console.log(this.visible);
 }
 
 app.config(function($routeProvider) {
-	// var headerVisible = this.headerVisible;
 	$routeProvider
-    .when('/welcome', {
-		templateUrl: 'templates/welcome.html',
-		controller: 'WelcomeCtrl as ctrl',
-	})
+ //    .when('/welcome', {
+	// 	templateUrl: 'templates/welcome.html',
+	// 	controller: 'WelcomeCtrl as ctrl',
+	// })
 	.when('/home', {
 		templateUrl: 'templates/home.html',
 		controller: 'HomeCtrl as ctrl'
@@ -29,7 +26,7 @@ app.config(function($routeProvider) {
 		controller: 'AboutCtrl as ctrl'
 	})
 	.otherwise({
-		redirectTo: '/welcome'
+		redirectTo: '/home'
 	});
 });
 

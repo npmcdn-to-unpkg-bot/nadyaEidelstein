@@ -23,7 +23,6 @@ function WorkDetailsCtrl($routeParams, $location, worksService) {
 	    // video.setAttribute("controls","controls");
         eleme.appendChild(iframe);
     }
-	console.log(this.currentPath);
 }
 
 WorkDetailsCtrl.prototype.refresh = function(id) {
