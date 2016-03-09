@@ -1,0 +1,16 @@
+<section class="main">
+      <ul class="grid">
+         <li class="icon" ng-repeat="work in ctrl.works" ng-click="ctrl.goToWork(work)">
+            <a class="pointer">
+                 <div class="im"><img src="{{work.MainImage}}"></div>
+                 <div class="overlay">
+                   <p>{{ work.ShortDescription }}</p>
+                   <h2>{{ work.Title }}</h2>
+                 </div>
+            </a>
+         </li>
+      </ul>
+    <footer>
+     <p class="coryright">&copy;Nadya Eidelestein - all contents copyright Nadya Eidelstein</p>
+   </footer>
+    </section>

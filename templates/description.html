@@ -1,0 +1,34 @@
+<section class="main work-details">
+   <section class="description">
+     <div class="main-image-container">
+         <div class="center">
+         <div class="left pointer" ng-click="ctrl.subtract(ctrl.id)">
+            <img class="inactive" src="../images/arrow-left.svg">
+            <img class="active" src="../images/arrow-left-active.svg">
+         </div>
+         <div class="right pointer" ng-click="ctrl.add(ctrl.id)">
+            <a><img class="inactive" src="../images/arrow-left.svg"></a>
+            <img class="active" src="../images/arrow-left-active.svg">
+         </div>
+         <div id="media"></div>
+<!--             <img src="{{ctrl.pie.Image}}"> -->
+         </div>
+     </div>
+     <div class="info-navigation">
+       <h3>{{ ctrl.pie.Name }}</h3>
+        <p class="materials">{{ ctrl.pie.Materials }}</p>
+        <p class="measurements">{{ ctrl.pie.Measurements }}</p>
+   	  <ul class="thumbnails">
+   	   	  <li class="pointer" ng-repeat="piece in ctrl.work.Pieces" ng-click="ctrl.chooseWork(piece.ID)" ng-style="piece.Status === 'active' && {'opacity': '0.2'}"><img src="{{piece.Thumb}}" ></li>
+   	  </ul>
+      </div>
+   </section>
+   <div class="text">
+      <h2>{{ ctrl.work.Title }}</h2>
+<!--       <p ng-repeat="paragraph in ctrl.work.Description">{{ paragraph }}</p> -->
+<div ng-include="ctrl.work.Description"></div>
+   </div>
+   <footer>
+     <p class="coryright">&copy;Nadya Eidelestein - all contents copyright Nadya Eidelstein</p>
+   </footer>
+</section>

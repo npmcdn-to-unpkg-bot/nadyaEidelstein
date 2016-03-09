@@ -1,0 +1,657 @@
+.name {
+   // @include break(0, 920px) {
+   //    display: none;
+   // }
+   background: white;
+   z-index: 10;
+   position: absolute;
+   top: 0;
+   width: 100%;
+   // height: 100%;
+   text-align: center;
+   img {
+      cursor: pointer;
+      max-width: 100%;
+      // height: 100%;
+      // margin-right: 10%;
+      // margin-left: 10%;
+      text-align: center;
+      margin-top: 10%;
+      // margin-bottom: 10%;
+   }
+}
+.navigation {
+   position: fixed;
+   width:100%;
+   z-index: 5;
+   top: 0%;
+   // min-height: 9.25em;
+   opacity: 0.61;
+   background-image: linear-gradient(-180deg, #F2DC7D 0%, #FFFFFF 100%);
+   -webkit-box-shadow: 0px 7px 20px 0px rgba(227,227,227,0.45);
+   -moz-box-shadow: 0px 7px 20px 0px rgba(227,227,227,0.45);
+   box-shadow: 0px 7px 20px 0px rgba(227,227,227,0.45);
+   font-family: 'Maven Pro', sans-serif;
+   font-weight: 700;
+     .navigation-container {
+         max-width: 100%;
+         @include break(0, 920px) {
+            margin-left: 5%;
+         }
+         .links {
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            .list-of-links {
+               padding: 0;
+               li { 
+                  @include break(768px) {
+                     margin-left: auto;
+                     margin-right: auto;
+                     width: 12em;
+                  }
+                  @include break(0, 920px) {
+                     width: 12em;
+                  }
+                  img{
+                     width: 100%;
+                  }
+               }
+               li:nth-child(1) {
+                  margin-bottom: 0.5em;
+               }
+            }
+         }
+            
+     }
+}
+
+.pointer {
+   cursor: pointer;
+}
+
+body {
+   font-size: 16px;
+}
+.social_media_container {
+   position: absolute;
+   @include break(0, 768px) {
+          right: 5%;
+   }
+   right: 10%;
+   top: 15%;
+   ul { 
+      padding: 0;
+      margin: 0 0;
+      text-align: right;
+      li {
+         padding-left: 1.25em;
+         display: inline-block;
+         @include break-media(0px, 768px) {
+            display: block;
+            width: 1.8em;
+         }
+         @include break(0px, 768px) {
+            display: block;
+            width: 2.25em;
+         }
+         width:2.25em;
+         img {
+            width: 100%;
+            opacity: 0.7;
+         }
+      }
+   }
+}
+// #main {
+//    display: none;
+// }
+.main {
+   position: relative;
+   top: 11em;
+   @include break(0, 920px) {
+      max-width: 90%;
+      top: 10em;
+   }
+   max-width: 75%;
+   margin-top: 2.5em;
+   margin-right: auto;
+   margin-left: auto;
+   height: 100%;
+}
+
+footer {
+   float: none;
+   clear: both;
+   position: relative;
+   font-size: 0.75em;
+   width: 100%;
+
+   p {
+      padding-top: 5em;
+      text-align: center;
+      color: $footer-color;
+   }
+}
+li{
+	list-style: none;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+   color: $font-color;
+}
+
+p, li {
+   font-family: 'Maven Pro', sans-serif;
+   color: $font-color;
+   line-height: 1.5em;
+   font-size: 1em;
+}
+
+li {
+   font-size: 0.875em;
+}
+// font-family: 'Varela Round', sans-serif;
+// font-family: 'Ubuntu', sans-serif;
+// font-family: 'Oxygen', sans-serif;
+.grid {
+   padding: 0;
+   margin: 0;
+   .icon {
+      float: left;
+      position: relative;
+      @include break-media(920px) {
+        @include icon-grid(3, 4%);
+      }
+      @include break(920px) {
+         @include icon-grid(3, 4%);
+      } 
+      @include break-media(630px, 920px) {
+        @include icon-grid(2, 8%);
+      }
+      @include break(630px, 920px) {
+         @include icon-grid(2, 8%);
+      }
+      @include break-media(0, 630px) {
+        @include icon-grid(1, 15%);
+      }
+      @include break(0, 630px) {
+         @include icon-grid(1, 15%);
+      } 
+      a {
+         display: block;
+         img {
+            // opacity: 0.9;
+            border-radius: 5px;
+            max-width: 100%;
+            @include break(0, 920px) {
+               outline: 0.15em solid rgba(248, 252, 208, 0.6);
+               outline-offset: -1em;
+            }
+         }
+         .overlay {
+            width: 100%;
+            @include break-media(920px) {
+               display: none;
+               bottom: 0;
+               position: absolute;
+               left: 0%;
+               margin-bottom: 35%;
+            }
+            @include break(920px) {
+               display: none;
+               bottom: 0;
+               position: absolute;
+               left: 0%;
+               margin-bottom: 35%;
+            }
+            @include break-media(0px, 920px) {
+               display: none;
+               bottom: 0;
+            }
+            @include break(0px, 920px) {
+               display: block;
+               bottom: 0;
+            }
+            h2 {
+               font-size: 1.1em;
+               text-transform: uppercase;
+               @include break-media(0px, 920px) {
+                  margin: 0;
+               }
+               @include break(0px, 920px) {
+                  margin: 0;
+               }
+            }
+            h2, p {
+               color: $font-color;
+               padding: 2% 10%;
+               text-align: center;
+            }
+            p {
+               font-size: 0.875em;
+               @include break-media(0, 920px) {
+                  margin: 0;
+                  padding-bottom: 0;
+                  padding-top: 0;
+               }
+               @include break(0, 920px) {
+                  margin: 0;
+                  padding-bottom: 0;
+                  padding-top: 0;
+               }
+            }
+         }
+      }
+   }
+}
+
+.icon a:hover {
+   @include break-media(920px) {
+      .im {
+         opacity: 0.3;
+         img {
+            outline: 0.15em solid #EDF791;
+            outline-offset: -1em;
+         }
+      }
+   }
+   @include break(920px) {
+      .im {
+         opacity: 0.3;
+         img {
+            outline: 0.15em solid #EDF791;
+            outline-offset: -1em;
+         }
+      }
+   }
+   .overlay {
+      @include break-media(920px) {
+         display: block;
+      }
+      @include break(920px) {
+         display: block;
+      }
+   }
+}
+.description {
+   overflow:hidden;
+   height: 100%;
+   position: relative;
+}
+
+.main-image-container {
+   text-align: center;
+   margin: 0;
+   @include break(920px) {
+      float: left;
+      @include display-grid(2, 5%);
+      // @include break-media(0px, 1150px) {
+      //    float: none;
+      //    margin-left: 15%;
+      //    margin-right: 15%;
+      // }
+   }
+   @include break(0px, 920px) {
+      float: none;
+   }
+   .center {
+      position: relative;
+      img, iframe {
+      // max-height: 100%;
+      max-width: 100%;
+      @include break(730px, 920px) {
+         max-width: 70%;
+      }
+      }
+      iframe {
+          width: 560px; 
+          height: 315px;
+      }
+//       #media {
+//              position: relative;
+//     padding-bottom: 56.25%;
+//     padding-top: 35px;
+//     height: 0;
+//     overflow: hidden;
+//       }
+//     #media #iframe {
+//     position: absolute;
+//     top:0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+// }
+   }
+   @include break (920px) {
+   .left {
+      z-index: 3;
+      display: none;
+      height: 50%;
+      width: 5em;
+      left: 0;
+      bottom: 40%;
+      position: absolute;
+      transform: rotate(180deg);
+      // background-image: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, #F8EAB0 100%);
+      .inactive, .active {
+         right: 0.5em;
+         top: 0;
+         position: absolute;
+         vertical-align: middle;
+         height: 5em;
+      }
+      .active {
+         display: none;
+      }
+   }
+   .left:hover {
+      .active {
+         display: block;
+      }
+      .inactive {
+         display: none;
+      }
+   }
+   .right {
+      z-index: 3;
+      display: none;
+      // margin-top: 25%;
+      // margin-bottom: 25%;
+      height: 50%;
+      width: 5em;
+      // background-image: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, #F8EAB0 100%);
+      position: absolute;
+      right: 0;
+      bottom: 40%;
+      .inactive, .active {
+         right: 0.5em;
+         bottom: 0;
+         position: absolute;
+         vertical-align: middle;
+         height: 5em;
+      }
+      .active {
+         display: none;
+      }
+   }
+   .right:hover {
+      .active {
+         display: block;
+      }
+      .inactive {
+         display: none;
+      }
+   }
+   .center:hover {
+      .right, .left{ 
+      display: block;
+   }
+   }
+}
+   @include break (0, 920px) {
+      .left:hover {
+         display: none;
+      }
+      .right:hover {
+         display: none;
+      }
+      .left {
+         display: none;
+      }
+      .right {
+         display: none;
+      }
+   }
+}
+.info-navigation {
+   margin: 0;
+   @include break(920px) {
+      float: left;
+      @include display-grid(2, 5%);
+      // @include break-media(0px, 1150px) {
+      //    float: none;
+      //    width: 100%;
+      //    h3 {text-align: center;}
+      // }
+      // @include break-media(0, 1000px) {
+      //    width: 100%;
+      //    @include display-grid(1, 0%);
+      //    float: none;
+      //    text-align: center;
+      // }
+   }
+   @include break(630px, 920px) {
+      width: 100%;
+      float: none;
+      margin-top: 2em;
+   }
+   @include break(0px, 630px) {
+      margin-top: 1em;
+   }
+   h3 {
+      margin: 0;
+      font-size: 1.1em;
+      margin-bottom: 1em;
+   }
+   p {
+      font-size: 0.875em;
+      margin-top: 0;
+      margin-bottom: 0;
+   }
+   .materials {
+      margin-bottom: 0.5em;
+   }
+   .measurements {
+      font-size: 0.75em;
+      margin-bottom: 2em;
+   }
+   h3, p {
+      @include break(920px) {
+         text-align: left;
+      }
+      @include break(0px, 920px) {
+         text-align: center;
+      }
+   }
+   .thumbnails {
+      margin: 0;
+      padding: 0;
+      @include break-media(630px, 1000px) {
+         width: 100%;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      @include break(630px, 920px) {
+         width: 100%;
+         margin-left: auto;
+         margin-right: auto;
+      }
+      li {
+         width: 100%;
+         float: left;
+         display: inline-block;
+         @include break(920px) {
+            @include icon-grid(4, 5%);
+         //             @include break-media(630px, 920px) {
+         //    @include icon-grid(7, 2%);
+         // }
+         }
+         @include break(630px, 920px) {
+            @include icon-grid(7, 2%);
+         }
+         @include break(400px, 630px) {
+            @include icon-grid(4, 5%);
+         }
+         @include break(0px, 400px) {
+            @include icon-grid(3, 5%);
+         }
+         img {
+            width: 100%;
+            border-radius: 3px;
+         }
+      }
+   }
+}
+
+.text {
+   a {
+      font-weight: bold;
+      color: $font-color;
+   }
+   clear:both;
+   @include break(920px) {
+      max-width: 35em;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 3em;
+   }
+   @include break(725px, 920px) {
+      width: 100%;
+      margin-top: 2em;
+   }
+   @include break(0px, 725px) {
+      width: 100%;
+      margin-top: 1.5em;
+   }
+   margin-right: auto;
+   margin-left: auto;
+   h2 {
+      text-align: center;
+      margin: 0;
+      font-size: 1.3em;
+   }
+}
+.about {
+   margin-left: auto;
+   margin-right: auto;
+   @include break(920px) {
+            width: 65%;
+   @include break-media(920px) {
+      width: 65%;
+   }
+   @include break-media(630px, 920px) {
+      width: 80%;
+   }
+   @include break-media(0px, 630px) {
+      width: 100%;
+   }
+
+   }
+   @include break(630px, 920px) {
+      width: 80%;
+   }
+   @include break(0px, 630px) {
+      width: 100%;
+   }
+}
+.portrait {
+   float: left;
+   @include break(920px) {
+      width: 15em;
+      margin-bottom: 2em;
+   }
+   @include break-media(0px, 630px) {
+      float: none;
+      width: 15em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+   }
+   @include break(630px, 920px) {
+      width: 15em;
+      margin-bottom: 2em;
+   }
+   @include break(490px, 630px) {
+      width: 50%;
+      margin-left: 25%;
+      margin-right: 25%;
+   }
+   @include break(400px, 490px) {
+      width: 80%;
+      margin-left: 15%;
+      margin-right: 15%;
+   }
+   @include break(0px, 400px) {
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+   }
+   img {
+      width: 100%;
+   }
+}
+
+.bio {
+   overflow: auto;
+   padding-left: 2em;
+   @include break-media(0px, 630px) {
+      width: 100%;
+      padding: 0;
+      padding-top: 1em;
+      h2, .email {
+         font-family: "Ubuntu", sans-serif;
+         text-align: center;
+      }
+   }
+   @include break(0px, 630px) {
+      width: 100%;
+      padding: 0;
+      padding-top: 1em;
+      h2, .email {
+         font-family: "Ubuntu", sans-serif;
+         text-align: center;
+      }
+   }
+   h2 {
+      font-family: "Ubuntu", sans-serif;
+      margin-bottom: 1em;
+      margin-top: 0;
+      font-size: 1.3em;
+   }
+   p{
+      margin-top: 0;
+   }
+}
+.line {
+   float: none;
+         width: 100%;
+   img {
+      width: 100%;
+   }
+}
+.cv {
+      li {
+         list-style: url('../images/point.gif');
+      }
+   div {
+      float: left;
+      @include icon-grid(2, 10%);
+      @include break-media(0px, 830px) {
+         @include icon-grid(1, 0%);
+      }
+      @include break(0px, 830px) {
+         @include icon-grid(1, 0%);
+      }
+
+      h3 {
+         margin-top: 3em;
+         font-size: 1.1em
+      }
+      a {
+         color: $font-color;
+      }
+   }
+}
+
+.selected {
+   display: none;
+}
+.black {
+   background: black;
+}

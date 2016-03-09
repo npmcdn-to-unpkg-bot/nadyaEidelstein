@@ -1,0 +1,22 @@
+{
+  "name": "nadya_eidelstein",
+  "version": "1.0.0",
+  "description": "artist's website built with AngularJS, Sass and Grunt",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yabloko28/nadyaEidelstein.git"
+  },
+  "author": "Nadya Eidelstein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yabloko28/nadyaEidelstein/issues"
+  },
+  "homepage": "https://github.com/Yabloko28/nadyaEidelstein#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

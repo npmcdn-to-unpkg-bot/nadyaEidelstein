@@ -1,0 +1,80 @@
+@mixin icon-grid ($qty, $margin) {
+	width: ((100% - (( $qty - 1) * $margin )) / $qty);
+    &:nth-child(n) {
+    	margin-bottom:  $margin;
+    	margin-right: $margin;
+    }
+    &:nth-child(#{$qty}n) {
+    	margin-right: 0;
+    }
+}
+
+@mixin cv-grid ($qty) {
+	width: ((100% - (( $qty - 1))) / $qty);
+    &:nth-child(n) {
+    	margin-bottom:  0;
+    	margin-right: 0;
+    }
+}
+
+@mixin display-grid ($qty, $margin) {
+    &:nth-child(n) {
+    	width: ((100% - (( $qty - 1) * $margin )) / 5 * 3);
+    	margin-right: $margin;
+    }
+    &:nth-child(#{$qty}n) {
+    	width: ((100% - (( $qty - 1) * $margin )) / 5 * 2);
+    	margin-right: 0;
+    }
+}
+
+@mixin nav-grid ($qty, $length) {
+	width: ((100% - (( $qty - 1) )) / $qty);
+	@media(max-width: $length) {
+	    &:nth-child(n) {
+          width: ((100% - (( $qty - 2) )) / ($qty - 1));
+	    }
+	    &:nth-child(1) {
+		   width: 0;
+		}
+	}
+}
+
+@mixin break($args...) {
+	@if length($args) == 1 {
+		@media(min-device-width: nth($args, 1)) {
+			@content;
+		}
+	}
+	@if length($args) == 2 {
+		@media(min-device-width: nth($args, 1))
+		and (max-device-width: nth($args, 2)) {
+			@content;
+		}
+	}
+}
+
+@mixin break-media($args...) {
+	@if length($args) == 1 {
+		@media(min-width: nth($args, 1)) {
+			@content;
+		}
+	}
+	@if length($args) == 2 {
+		@media(min-width: nth($args, 1))
+		and (max-width: nth($args, 2)) {
+			@content;
+		}
+	}
+}
+
+@mixin clearfix {
+	&::before,
+	&::after {
+		content : "";
+		display: table;
+	}
+	&::after {
+		clear: both;
+	}
+}
