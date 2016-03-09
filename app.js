@@ -2,17 +2,19 @@ var app = angular.module('nadya', ['ngRoute']);
 
 app.controller('MainCtrl', MainCtrl);
 
-function MainCtrl($routeParams, $location) {
-    console.log("works");
+function MainCtrl($scope, $routeParams, $location) {
     this.currentPath = $location.path();
-	console.log(this.currentPath);
+	// console.log(this.currentPath);
+    this.visible = true;
+    console.log(this.visible);
 }
 
 app.config(function($routeProvider) {
+	// var headerVisible = this.headerVisible;
 	$routeProvider
     .when('/welcome', {
 		templateUrl: 'templates/welcome.html',
-		controller: 'WelcomeCtrl as ctrl'
+		controller: 'WelcomeCtrl as ctrl',
 	})
 	.when('/home', {
 		templateUrl: 'templates/home.html',
@@ -37,7 +39,10 @@ $(document).ready(function() {
 	var shrunk = false;
 	var startchange = $('#main');
 	var offset = startchange.offset();
-
+    
+    $("#name").click(function() {
+    	$(this).hide();
+    })
 	$(document).scroll(function() {
 	   scroll_start = $(this).scrollTop();
 	    if(scroll_start > 50 && !shrunk) {

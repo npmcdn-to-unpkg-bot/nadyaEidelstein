@@ -13,7 +13,7 @@ module.exports = function(grunt) {
                      sourcemap: 'none',
               },
               files: {
-                'css/styles-new.css': 'css/styles.scss'
+                'css/styles-humanreadable.css': 'sass/styles.scss'
               }
             },
             dist: {
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                      sourcemap: 'none',
               },
               files: {
-                'css/style-min.css': 'css/styles.scss'
+                'css/app.css': 'sass/styles.scss'
               }
             } 
     },

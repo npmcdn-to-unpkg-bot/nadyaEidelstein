@@ -6,6 +6,7 @@ function HomeCtrl($routeParams, $location, worksService) {
 	this.worksService = worksService;
 	this.works = this.worksService.getWorks();
 	console.log(this.currentPath);
+    this.headerVisible = true;
 }
 
 HomeCtrl.prototype.goToWork = function(work) {

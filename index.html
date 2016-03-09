@@ -14,15 +14,16 @@
     <script src="js/controllers/AboutCtrl.js"></script>
     <script src="js/services/worksService.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
     <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="n.ico" type="image/x-icon"/>
 
 </head>
 
-<body ng-app='nadya'>
-   <header class="navigation" ng-show="currentPath != '/welcome'">
+<body ng-app='nadya' ng-controller="MainCtrl">
+   <div id="name" class="name"><a href="#/home"><img id="gif" src="images/nadya.gif" ></a></div>
+   <header class="navigation">
     <div class="navigation-container" ng-click="ctrl.cli()">
       <div class="logo-container"></div>
       <nav class="links">
