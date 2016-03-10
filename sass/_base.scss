@@ -106,12 +106,12 @@ body {
 .main {
    position: relative;
    top: 11em;
+      // @include break(920px, 1400px) {
+   //    max-width: 75%;
+   // }
    @include break-media(920px, 1400px) {
       max-width: 75%;
    }
-   // @include break(920px, 1400px) {
-   //    max-width: 75%;
-   // }
    @include break-media(0, 920px) {
       max-width: 90%;
       top: 10em;
