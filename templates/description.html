@@ -2,16 +2,18 @@
    <section class="description">
      <div class="main-image-container">
          <div class="center">
-         <div class="left pointer" ng-click="ctrl.subtract(ctrl.id)">
+          <div class="left pointer" ng-click="ctrl.subtract(ctrl.id)">
             <img class="inactive" src="../images/arrow-left.svg">
             <img class="active" src="../images/arrow-left-active.svg">
-         </div>
-         <div class="right pointer" ng-click="ctrl.add(ctrl.id)">
-            <a><img class="inactive" src="../images/arrow-left.svg"></a>
+          </div>
+          <div class="right pointer" ng-click="ctrl.add(ctrl.id)">
+            <img class="inactive" src="../images/arrow-left.svg">
             <img class="active" src="../images/arrow-left-active.svg">
-         </div>
-         <div id="media"></div>
-<!--             <img src="{{ctrl.pie.Image}}"> -->
+          </div>
+          <div class="pin-button">
+             <a data-pin-do="buttonBookmark" data-pin-tall="true" href="https://www.pinterest.com/pin/create/button/"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_28.png" /></a>
+          </div>
+          <div id="media"></div>
          </div>
      </div>
      <div class="info-navigation">

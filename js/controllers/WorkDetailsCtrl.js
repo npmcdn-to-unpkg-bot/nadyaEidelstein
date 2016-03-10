@@ -10,10 +10,12 @@ function WorkDetailsCtrl($routeParams, $location, worksService) {
 	this.pies = this.work.Pieces;
 	this.pie.Status = 'active';
 	this.sour = this.pie.MImage;
+	this.attr = this.pie.Attribute;
 	var eleme = document.getElementById("media");
 	if(this.pie.Media == "image") {
 	    var img = document.createElement("img");
 	    img.setAttribute('src', this.sour);
+	    img.setAttribute('alt', this.attr);
         eleme.appendChild(img);
 	} else if(this.pie.Media == "video") {
 	    var iframe = document.createElement("iframe");
@@ -32,12 +34,14 @@ WorkDetailsCtrl.prototype.refresh = function(id) {
     }
     this.pie.Status = 'active';
     this.sour = this.pie.MImage;
+    this.attr = this.pie.Attribute;
     var eleme = document.getElementById("media");
     if(this.pie.Media == "image") {
     	var x = eleme.childNodes;
     	eleme.removeChild(eleme.childNodes[0]);
 	    var img = document.createElement("img");
 	    img.setAttribute('src', this.sour);
+	    img.setAttribute('alt', this.attr);
         eleme.appendChild(img);
 	} else if(this.pie.Media == "video") {
 		var x = eleme.childNodes;

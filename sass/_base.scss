@@ -106,9 +106,6 @@ body {
 .main {
    position: relative;
    top: 11em;
-      // @include break(920px, 1400px) {
-   //    max-width: 75%;
-   // }
    @include break-media(920px, 1400px) {
       max-width: 75%;
    }
@@ -295,11 +292,6 @@ li {
    @include break(920px) {
       float: left;
       @include display-grid(2, 5%);
-      // @include break-media(0px, 1150px) {
-      //    float: none;
-      //    margin-left: 15%;
-      //    margin-right: 15%;
-      // }
    }
    @include break(0px, 920px) {
       float: none;
@@ -307,30 +299,15 @@ li {
    .center {
       position: relative;
       img, iframe {
-      // max-height: 100%;
-      max-width: 100%;
-      @include break(730px, 920px) {
-         max-width: 70%;
-      }
+         max-width: 100%;
+         @include break(730px, 920px) {
+            max-width: 70%;
+         }
       }
       iframe {
           width: 560px; 
           height: 315px;
       }
-//       #media {
-//              position: relative;
-//     padding-bottom: 56.25%;
-//     padding-top: 35px;
-//     height: 0;
-//     overflow: hidden;
-//       }
-//     #media #iframe {
-//     position: absolute;
-//     top:0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-// }
    }
    @include break (920px) {
    .left {
@@ -342,7 +319,6 @@ li {
       bottom: 40%;
       position: absolute;
       transform: rotate(180deg);
-      // background-image: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, #F8EAB0 100%);
       .inactive, .active {
          right: 0.5em;
          top: 0;
@@ -365,8 +341,6 @@ li {
    .right {
       z-index: 3;
       display: none;
-      // margin-top: 25%;
-      // margin-bottom: 25%;
       height: 50%;
       width: 5em;
       // background-image: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, #F8EAB0 100%);
@@ -384,6 +358,12 @@ li {
          display: none;
       }
    }
+   .pin-button{
+      display: none;
+      position: absolute;
+      left: 1em;
+      top: 1em;
+   }
    .right:hover {
       .active {
          display: block;
@@ -393,7 +373,7 @@ li {
       }
    }
    .center:hover {
-      .right, .left{ 
+      .right, .left, .pin-button{ 
       display: block;
    }
    }

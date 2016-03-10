@@ -846,13 +846,19 @@ li {
   .main-image-container .right .active {
     display: none;
   }
+  .main-image-container .pin-button {
+    display: none;
+    position: absolute;
+    left: 1em;
+    top: 1em;
+  }
   .main-image-container .right:hover .active {
     display: block;
   }
   .main-image-container .right:hover .inactive {
     display: none;
   }
-  .main-image-container .center:hover .right, .main-image-container .center:hover .left {
+  .main-image-container .center:hover .right, .main-image-container .center:hover .left, .main-image-container .center:hover .pin-button {
     display: block;
   }
 }
