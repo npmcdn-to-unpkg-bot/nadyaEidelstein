@@ -1,34 +1,35 @@
 module.exports = function(grunt) {
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
 
-  grunt.initConfig({
+		/** Sass task*/
 
-    pkg: grunt.file.readJSON('package.json'),
-
-    /** Sass task*/
-
-    sass: {
-            dev: {
+		sass: {
+			dev: {
               options: {
                      style: 'expanded',
                      sourcemap: 'none',
               },
               files: {
-                'css/styles-humanreadable.css': 'sass/styles.scss'
-              }
-            },
-            dist: {
-              options: {
-                     style: 'compressed',
-                     sourcemap: 'none',
-              },
-              files: {
                 'css/app.css': 'sass/styles.scss'
               }
-            } 
-    },
+            },
+            // dist: {
+            //   options: {
+            //          style: 'expanded',
+            //          sourcemap: 'none',
+            //   },
+            //   files: {
+            //     'css/app.css': 'sass/styles.scss'
+            //   }
+            // } 
+        },
+
+        /** Autoprefixer task*/
+
         autoprefixer: {
           options: {
-            browsers: ['last 2 version']
+            browsers: ['last 2 version', 'ie 8', 'ie 9']
           },
           multiple_files: {
             expand: true,
@@ -38,19 +39,38 @@ module.exports = function(grunt) {
           }
         },
 
+        /** Reload task*/
+
+        // connect: {
+        // 	sever: {
+        // 		options: {
+        // 			hostname: 'localhost',
+        // 			port: 3000,
+        // 			livereload:true
+        // 		}
+        // 	}
+        // },
+
         /** Watch task*/
 
         watch: {
-          css: {
-            files: '**/*.scss',
-            tasks: ['sass', 'autoprefixer']
-          }
+        	options: {
+        		spawn: false
+        	},
+        	scripts: {
+        		files: ['*.html',
+        		        'sass/*.scss',
+        		        'js/*.js'],
+        		tasks: ['sass', 'autoprefixer']
+        	}
         }
 
-  });
+	});
+    
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.registerTask('default', ['watch']);
+
+	grunt.registerTask('default', ['sass', 'autoprefixer', 'watch']);
 }

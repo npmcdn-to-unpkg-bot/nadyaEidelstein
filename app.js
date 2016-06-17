@@ -13,7 +13,7 @@ app.config(function($routeProvider) {
 	// 	templateUrl: 'templates/welcome.html',
 	// 	controller: 'WelcomeCtrl as ctrl',
 	// })
-	.when('/home', {
+	.when('/', {
 		templateUrl: 'templates/home.html',
 		controller: 'HomeCtrl as ctrl'
 	})
@@ -25,8 +25,12 @@ app.config(function($routeProvider) {
 		templateUrl: 'templates/about.html',
 		controller: 'AboutCtrl as ctrl'
 	})
+	.when('/shop', {
+		templateUrl: 'templates/shop.html',
+		controller: 'ShopCtrl as ctrl'
+	})
 	.otherwise({
-		redirectTo: '/home'
+		redirectTo: '/'
 	});
 });
 
