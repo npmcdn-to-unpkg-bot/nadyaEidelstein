@@ -34,27 +34,15 @@
 </head>
 
 <body ng-app='nadya' ng-controller="MainCtrl">
-   <div id="name" class="name"><img id="gif" src="images/nadya.gif" alt="Animated name Nadya Eidelstein" ></div>
-   <header class="navigation">
-    <div class="navigation-container" ng-click="ctrl.cli()">
-      <div class="logo-container"></div>
-      <nav class="links">
-         <ul class="list-of-links">
-            <li class="lin"><a href="#/about"><img id="about" src="images/about.gif" alt="About"></a></li>
-            <li class="lin"><a href="#/home"><img  id="works" src="images/works.gif" alt="Works"></a></li>
-         </ul>
-      </nav>
-      <div class="social_media_container">
-         <ul>
-            <li class="sm"><a href="https://www.instagram.com/yabloko28/" target="_blank"><img src="images/insta.svg" alt="Instagram"></a></li>
-            <li class="sm"><a href="https://www.facebook.com/nadya.peeps.1?ref=bookmarks" target="_blank"><img src="images/facebook.svg" alt="Facebook"></a></li>
-            <li class="sm"><a href="https://www.pinterest.com/yabloko28/" target="_blank"><img src="images/pin.svg" alt="Pinterest"></a></li>
-         </ul>
-      </div>
-     </div>
+   <!-- <div id="name" class="name"><img id="gif" src="images/nadya.gif" alt="Animated name Nadya Eidelstein" ></div> -->
+   <header class="navigation" ng-include="'templates/header.html'">
+
    </header>
   <main id="main" ng-view="" autoscroll="">
 
   </main>
+     <footer>
+     <p class="coryright">&copy;Nadya Eidelestein - all contents copyright <a href="http://nadyascreatures.com/web-projects.com/">Nadya Eidelstein</a></p>
+   </footer>
 </body>
 </html>

@@ -13,7 +13,7 @@ app.config(function($routeProvider) {
 	// 	templateUrl: 'templates/welcome.html',
 	// 	controller: 'WelcomeCtrl as ctrl',
 	// })
-	.when('/', {
+	.when('/home', {
 		templateUrl: 'templates/home.html',
 		controller: 'HomeCtrl as ctrl'
 	})
@@ -30,7 +30,7 @@ app.config(function($routeProvider) {
 		controller: 'ShopCtrl as ctrl'
 	})
 	.otherwise({
-		redirectTo: '/'
+		redirectTo: '/home'
 	});
 });
 
@@ -47,13 +47,17 @@ $(document).ready(function() {
 	$(document).scroll(function() {
 	   scroll_start = $(this).scrollTop();
 	    if(scroll_start > 50 && !shrunk) {
-	        $(".lin").animate({width: '5em'}, 500);
+	        $(".lin").animate({width: '9em'}, 500);
+	        $(".navigation-container").css("padding-top", "0");
+	        $(".navigation-container").css("padding-bottom", "0");
 	        if ($(window).width() < 768) {
 		    	$(".sm").css("display", "inline-block");
 		    }
 	    	shrunk = true;
 	    } else if(scroll_start < 50 && shrunk) {
-	    $(".lin").animate({width: '12em'}, 500);
+	    	$(".lin").animate({width: '11rem'}, 500);
+	    	$(".navigation-container").css("padding-top", "0.5rem");
+	        $(".navigation-container").css("padding-bottom", "0.5rem");
 	    	if ($(window).width() < 768) {
 		    	$(".sm").css("display", "block");
 		    }

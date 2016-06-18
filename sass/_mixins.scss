@@ -42,13 +42,13 @@
 
 @mixin break($args...) {
 	@if length($args) == 1 {
-		@media(min-device-width: nth($args, 1)) {
-			@content;
-		}
+	    @media only screen and (min-width: nth($args, 1)) {
+		    @content;
+	    }
 	}
 	@if length($args) == 2 {
-		@media(min-device-width: nth($args, 1))
-		and (max-device-width: nth($args, 2)) {
+		@media only screen and (min-width: nth($args,1))
+		and (max-width: nth($args,2)) {
 			@content;
 		}
 	}
