@@ -38,47 +38,105 @@ html {
    // min-height: 9.25em;
    opacity: 0.9;
    background-image: linear-gradient(90deg, #f7f89b 0%, #c0e2f2 100%);
-   -webkit-box-shadow: 0px 7px 20px 0px rgba(227,227,227,0.45);
-   -moz-box-shadow: 0px 7px 20px 0px rgba(227,227,227,0.45);
-   box-shadow: 0px 7px 20px 0px rgba(227,227,227,0.45);
+   -webkit-box-shadow: 0px 7px 20px 0px rgba(200,200,200,0.45);
+   -moz-box-shadow: 0px 7px 20px 0px rgba(200,200,200,0.45);
+   box-shadow: 0px 7px 20px 0px rgba(200,200,200,0.45);
    font-family: 'Maven Pro', sans-serif;
    font-weight: 700;
      .navigation-container {
-         max-width: 75%;
          display: flex;
          flex-direction: row;
          margin: auto;
          padding: 0.5rem 0;
-         align-items: center;
-         @include break(0, 920px) {
-            margin-left: 5%;
+         align-items: baseline;
+         @include break(0, 47.5em) {
+            align-items: center;
+         }
+         @include break(64em) {
+            width: 75%;
+         }
+         @include break(0, 64em) {
+            width: 90%;
+         }
+         @include break(0, 50em) {
+            padding: 0;
+         }
+         .menu-icon {
+            display: none;
+            @include break(0, 47.5em) {
+               display: block;
+               margin: 0.25rem 0 0 0;
+               img {
+                  width: 3em;
+               }
+            }
          }
          .links {
-            display: inline-block;
+            display: flex;
+            flex-direction: row;
             text-align: center;
             flex: 2;
             padding: 0;
             margin: 0;
+            @include break(0, 75em) {
+               flex: 1;
+            }
+            @include break(0, 47.5em) {
+               display: none;
+               width: 100%;
+               position: absolute;
+               top: 3.25rem;
+               left: 0;
+               padding: 0 5%;
+               flex-direction: column;
+               justify-content: flex-start;
+               background-image: linear-gradient(90deg, #f7f89b 0%, #c0e2f2 100%);
+               -webkit-box-shadow: 0px 7px 20px 0px rgba(200,200,200,0.45);
+               -moz-box-shadow: 0px 7px 20px 0px rgba(200,200,200,0.45);
+               box-shadow: 0px 7px 20px 0px rgba(200,200,200,0.45);
+               .list-of-links {
+                  li {
+                     display: block;
+                  }
+               }
+            }
             .list-of-links {
                display: flex;
                flex-direction: row;
                padding: 0;
-               li { 
-                  @include break(768px) {
-                     margin-left: 4rem;
-                     width: 11rem;
+               @include break(0, 47.5em) {
+                  padding-top: 0.5rem;
+                  justify-content: center;
+               }
+               li.image {
+                  display: none;
+                  @include break(0, 47.5em) {
+                     display: block;
                   }
-                  @include break(0, 920px) {
-                     width: 11rem;
+               }
+               li { 
+                  margin-left: 4rem;
+                  width: 11rem;
+                  @include break(0, 57.5em) {
+                     width: 8rem;
+                  }
+                  @include break(0, 26.5em) {
+                     margin-left: 2.5em; 
                   }
                   img{
                      width: 100%;
                   }
+                  @include break(0, 47.5em) {
+                     display: block;
+                     max-width: 6rem;
+                  }
                }
                li:nth-child(1) {
                   margin: 0;
-                  margin-bottom: 0.5em;
                   margin-left: 6rem;
+                  @include break(0, 75em) {
+                     margin-left: 0;
+                  }
                }
             }
          }
@@ -91,9 +149,6 @@ html {
 }
 
 .social_media_container {
-   @include break(0, 768px) {
-      right: 5%;
-   }
    flex: 1;
    padding: 0;
    margin: 0 0;
@@ -101,17 +156,19 @@ html {
    a {
       margin-left: 1.25em;
       display: inline-block;
-      @include break-media(0px, 768px) {
-         display: block;
-         width: 1.8em;
-      }
-      @include break(0px, 768px) {
-         display: block;
-         width: 2.25em;
-      }
       width:1.75rem;
       height: 2rem;
       color: $font-color;
+      @include break(0, 47.5em) {
+         margin-left: 1em;
+         width: 1.5rem;
+         height: 1.5rem;
+      }
+      @include break(47.5em, 57.5em) {
+         margin-left: 1em;
+         width: 1.5rem;
+         height: 1.75em;
+      }
       img {
          width: 100%;
       }
@@ -120,6 +177,14 @@ html {
       width: 5.5rem;
       margin-right: 1.25rem;
       height: 100%;
+      @include break(0, 57.5em) {
+            width: 5rem;
+            margin-right: 0.5rem;
+            height: 100%;
+      }
+      @include break(0, 47.5em) {
+         display: none;
+      }
    }
    .active {
       display: none;
@@ -145,29 +210,34 @@ html {
       background: url('pinterest.svg') no-repeat;
    }
    a.instagram:hover {
-      background: url('insta-active.svg') no-repeat;
+      @include break(47.5em) {
+         background: url('insta-active.svg') no-repeat;
+      }
    }
    a.facebook:hover {
-      background: url('facebook-active.svg') no-repeat;
+      @include break(47.5em) {
+         background: url('facebook-active.svg') no-repeat;
+      }
    }
    a.pinterest:hover {
-      background: url('pinterest-active.svg') no-repeat;
+      @include break(47.5em) {
+         background: url('pinterest-active.svg') no-repeat;
+      }
    }
 }
 
 .main {
    position: relative;
    top: 11em;
-   @include break-media(920px, 1400px) {
+   @include break(0, 50em) {
+      top: 6em;
+      max-width: 90%;
+   }
+   @include break(47.5em, 50em) {
+      top: 9em;
+   }
+   @include break(50em, 87.5em) {
       max-width: 75%;
-   }
-   @include break-media(0, 920px) {
-      max-width: 90%;
-      top: 10em;
-   }
-   @include break(0, 920px) {
-      max-width: 90%;
-      top: 10em;
    }
    max-width: 55%;
    margin-right: auto;
@@ -189,7 +259,9 @@ footer {
       font-weight: 700;
    }
    a:hover {
-      color: $active-link;
+      @include break(47.5em) {
+         color: $active-link;
+      }
    }
 }
 li{
@@ -222,22 +294,13 @@ li {
    .icon {
       float: left;
       position: relative;
-      @include break-media(920px) {
-        @include icon-grid(3, 4%);
-      }
-      @include break(920px) {
+      @include break(57.5em) {
          @include icon-grid(3, 4%);
       } 
-      @include break-media(630px, 920px) {
+      @include break(30em, 57.5em) {
         @include icon-grid(2, 8%);
       }
-      @include break(630px, 920px) {
-         @include icon-grid(2, 8%);
-      }
-      @include break-media(0, 630px) {
-        @include icon-grid(1, 15%);
-      }
-      @include break(0, 630px) {
+      @include break(0, 30em) {
          @include icon-grid(1, 15%);
       } 
       a {
@@ -253,35 +316,21 @@ li {
          }
          .overlay {
             width: 100%;
-            @include break-media(920px) {
+            @include break(57.5em) {
                display: none;
                bottom: 0;
                position: absolute;
                left: 0%;
                margin-bottom: 35%;
             }
-            @include break(920px) {
+            @include break(0px, 57.5em) {
                display: none;
-               bottom: 0;
-               position: absolute;
-               left: 0%;
-               margin-bottom: 35%;
-            }
-            @include break-media(0px, 920px) {
-               display: none;
-               bottom: 0;
-            }
-            @include break(0px, 920px) {
-               display: block;
                bottom: 0;
             }
             h2 {
                font-size: 1.1em;
                text-transform: uppercase;
-               @include break-media(0px, 920px) {
-                  margin: 0;
-               }
-               @include break(0px, 920px) {
+               @include break(0px, 57.5em) {
                   margin: 0;
                }
             }
@@ -292,12 +341,7 @@ li {
             }
             p {
                font-size: 0.875em;
-               @include break-media(0, 920px) {
-                  margin: 0;
-                  padding-bottom: 0;
-                  padding-top: 0;
-               }
-               @include break(0, 920px) {
+               @include break(0, 57.5em) {
                   margin: 0;
                   padding-bottom: 0;
                   padding-top: 0;
@@ -309,16 +353,7 @@ li {
 }
 
 .icon a:hover {
-   @include break-media(920px) {
-      .im {
-         opacity: 0.5;
-         img {
-            outline: 0.15em solid #EDF791;
-            outline-offset: -1em;
-         }
-      }
-   }
-   @include break(920px) {
+   @include break(57.5em) {
       .im {
          opacity: 0.5;
          img {
@@ -328,10 +363,7 @@ li {
       }
    }
    .overlay {
-      @include break-media(920px) {
-         display: block;
-      }
-      @include break(920px) {
+      @include break(57.5em) {
          display: block;
       }
    }
@@ -345,19 +377,19 @@ li {
 .main-image-container {
    text-align: center;
    margin: 0;
-   @include break(920px) {
+   @include break(57.5em) {
       float: left;
       @include display-grid(2, 5%);
    }
-   @include break(0px, 920px) {
+   @include break(0, 57.5em) {
       float: none;
    }
    .center {
       position: relative;
       img, iframe {
          max-width: 100%;
-         @include break(730px, 920px) {
-            max-width: 70%;
+         @include break(45.625em, 57.5em) {
+            max-width: 80%;
          }
       }
       iframe {
@@ -451,27 +483,16 @@ li {
 }
 .info-navigation {
    margin: 0;
-   @include break(920px) {
+   @include break(57.5em) {
       float: left;
       @include display-grid(2, 5%);
-      // @include break-media(0px, 1150px) {
-      //    float: none;
-      //    width: 100%;
-      //    h3 {text-align: center;}
-      // }
-      // @include break-media(0, 1000px) {
-      //    width: 100%;
-      //    @include display-grid(1, 0%);
-      //    float: none;
-      //    text-align: center;
-      // }
    }
-   @include break(630px, 920px) {
+   @include break(39.375em, 57.5em) {
       width: 100%;
       float: none;
       margin-top: 2em;
    }
-   @include break(0px, 630px) {
+   @include break(0px, 39.375em) {
       margin-top: 1em;
    }
    h3 {
@@ -492,23 +513,17 @@ li {
       margin-bottom: 2em;
    }
    h3, p {
-      @include break(920px) {
+      @include break(57.5em) {
          text-align: left;
       }
-      @include break(0px, 920px) {
+      @include break(0, 57.5em) {
          text-align: center;
       }
    }
    .thumbnails {
       margin: 0;
       padding: 0;
-      @include break-media(630px, 1000px) {
-         width: 100%;
-         margin-left: auto;
-         margin-right: auto;
-      }
-
-      @include break(630px, 920px) {
+      @include break(39.375em, 57.5em) {
          width: 100%;
          margin-left: auto;
          margin-right: auto;
@@ -517,19 +532,16 @@ li {
          width: 100%;
          float: left;
          display: inline-block;
-         @include break(920px) {
+         @include break(57.5em) {
             @include icon-grid(4, 5%);
-         //             @include break-media(630px, 920px) {
-         //    @include icon-grid(7, 2%);
-         // }
          }
-         @include break(630px, 920px) {
+         @include break(39.375em, 57.5em) {
             @include icon-grid(7, 2%);
          }
-         @include break(400px, 630px) {
+         @include break(25em, 39.375em) {
             @include icon-grid(4, 5%);
          }
-         @include break(0px, 400px) {
+         @include break(0px, 25em) {
             @include icon-grid(3, 5%);
          }
          img {
@@ -546,17 +558,17 @@ li {
       color: $font-color;
    }
    clear:both;
-   @include break(920px) {
+   @include break(57.5em) {
       max-width: 35em;
       margin-left: auto;
       margin-right: auto;
       margin-top: 3em;
    }
-   @include break(725px, 920px) {
-      width: 100%;
+   @include break(41.25em, 57.5em) {
+      width: 80%;
       margin-top: 2em;
    }
-   @include break(0px, 725px) {
+   @include break(0, 41.25em) {
       width: 100%;
       margin-top: 1.5em;
    }
@@ -571,54 +583,37 @@ li {
 .about {
    margin-left: auto;
    margin-right: auto;
-   @include break(920px) {
-            width: 65%;
-   @include break-media(920px) {
-      width: 65%;
+   @include break(57.5em) {
+      width: 75%;
+      padding: 0 5%;
    }
-   @include break-media(630px, 920px) {
-      width: 80%;
+   @include break(39.375em, 57.5em) {
+      width: 90%;
+      padding: 0 5%;
    }
-   @include break-media(0px, 630px) {
-      width: 100%;
-   }
-
-   }
-   @include break(630px, 920px) {
-      width: 80%;
-   }
-   @include break(0px, 630px) {
+   @include break(0, 57.5em) {
       width: 100%;
    }
 }
 .portrait {
    float: left;
-   @include break(920px) {
+   @include break(57.5em) {
       width: 15em;
       margin-bottom: 2em;
    }
-   @include break-media(0px, 630px) {
-      float: none;
-      width: 15em;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
+   @include break(39.375em, 57.5em) {
+      width: 40%;
+      margin: 0 30% 1.5em 30%;
    }
-   @include break(630px, 920px) {
-      width: 15em;
-      margin-bottom: 2em;
-   }
-   @include break(490px, 630px) {
+   @include break(30.625em, 39.375em) {
       width: 50%;
-      margin-left: 25%;
-      margin-right: 25%;
+      margin: 0 25% 1.5em 25%;
    }
-   @include break(400px, 490px) {
+   @include break(25em, 30.625em) {
       width: 80%;
-      margin-left: 15%;
-      margin-right: 15%;
+      margin: 0 10% 1.5em 10%;
    }
-   @include break(0px, 400px) {
+   @include break(0px, 25em) {
       width: 70%;
       margin-left: 15%;
       margin-right: 15%;
@@ -638,18 +633,9 @@ li {
    }
    a:hover {
       color: $active-link;
-      font-weight: 700;
+      text-decoration: underline;
    }
-   @include break-media(0px, 630px) {
-      width: 100%;
-      padding: 0;
-      padding-top: 1em;
-      h2, .email {
-         font-family: "Ubuntu", sans-serif;
-         text-align: center;
-      }
-   }
-   @include break(0px, 630px) {
+   @include break(0, 57.5em) {
       width: 100%;
       padding: 0;
       padding-top: 1em;
@@ -683,10 +669,7 @@ li {
    div {
       float: left;
       @include icon-grid(2, 10%);
-      @include break-media(0px, 830px) {
-         @include icon-grid(1, 0%);
-      }
-      @include break(0px, 830px) {
+      @include break(0, 64em) {
          @include icon-grid(1, 0%);
       }
 
