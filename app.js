@@ -43,6 +43,7 @@ $(document).ready(function() {
 
     var menu = $('#sliding-menu')
 	var button = $('#menu-icon');
+	var links = $('.lin');
 	var open = false;
 	console.log(button);
 	button.click(function() {
@@ -54,6 +55,13 @@ $(document).ready(function() {
 	   		open = false;
 	   	}
 	})
+	links.click(function() {
+	    if (open==true) {
+	   		menu.slideUp(400, function() {});
+	   		open = false;
+	   	}
+	})
+
 
     $("#name").click(function() {
     	$(this).hide();
