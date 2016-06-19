@@ -60,7 +60,7 @@ $(document).ready(function() {
     })
 	$(document).scroll(function() {
 	   scroll_start = $(this).scrollTop();
-	    if(scroll_start > 50 && !shrunk && $(window).width() > 800) {
+	    if(scroll_start > 50 && !shrunk && $(window).width() > 920) {
 	        $(".lin").animate({width: '8rem'}, 500);
 	        $(".navigation-container").css("padding-top", "0");
 	        $(".navigation-container").css("padding-bottom", "0");
@@ -68,7 +68,7 @@ $(document).ready(function() {
 		    	$(".sm").css("display", "inline-block");
 		    }
 	    	shrunk = true;
-	    } else if(scroll_start < 50 && shrunk && $(window).width() > 800) {
+	    } else if(scroll_start < 50 && shrunk && $(window).width() > 920) {
 	    	$(".lin").animate({width: '11rem'}, 500);
 	    	$(".navigation-container").css("padding-top", "0.5rem");
 	        $(".navigation-container").css("padding-bottom", "0.5rem");
@@ -80,7 +80,7 @@ $(document).ready(function() {
 	});
 
     $(".navigation").mouseover(function() {
-	    if (document.body.scrollTop > 50 && shrunk && $(window).width() > 800) {
+	    if (document.body.scrollTop > 50 && shrunk && $(window).width() > 920) {
 		    $(".lin").animate({width: '11rem'}, 500);
 		    if ($(window).width() < 768) {
 		    	$(".sm").css("display", "inline-block");
@@ -89,7 +89,7 @@ $(document).ready(function() {
 	    } 
     })
     $(".navigation").mouseleave(function() {
-        if (document.body.scrollTop > 50 && !shrunk && $(window).width() > 800) {
+        if (document.body.scrollTop > 50 && !shrunk && $(window).width() > 920) {
 		    $(".lin").animate({width: '8rem'}, 500);
 		    if ($(window).width() < 768) {
 		    	$(".sm").css("display", "block");

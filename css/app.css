@@ -513,43 +513,63 @@ html {
     justify-content: center;
   }
 }
-.navigation .navigation-container .links .list-of-links li.image {
+.navigation .navigation-container .links .list-of-links img.nonactive {
+  display: block;
+}
+.navigation .navigation-container .links .list-of-links img.active {
   display: none;
 }
-@media only screen and (min-width: 0) and (max-width: 47.5em) {
-  .navigation .navigation-container .links .list-of-links li.image {
+@media only screen and (min-width: 47.5em) {
+  .navigation .navigation-container .links li.about-link:hover img.nonactive {
+    display: none;
+  }
+  .navigation .navigation-container .links li.about-link:hover img.active {
+    display: block;
+  }
+  .navigation .navigation-container .links li.works-link:hover img.nonactive {
+    display: none;
+  }
+  .navigation .navigation-container .links li.works-link:hover img.active {
     display: block;
   }
 }
-.navigation .navigation-container .links .list-of-links li {
+.navigation .navigation-container .links li.image {
+  display: none;
+}
+@media only screen and (min-width: 0) and (max-width: 47.5em) {
+  .navigation .navigation-container .links li.image {
+    display: block;
+  }
+}
+.navigation .navigation-container .links li {
   margin-left: 4rem;
   width: 11rem;
 }
 @media only screen and (min-width: 0) and (max-width: 57.5em) {
-  .navigation .navigation-container .links .list-of-links li {
+  .navigation .navigation-container .links li {
     width: 8rem;
   }
 }
 @media only screen and (min-width: 0) and (max-width: 26.5em) {
-  .navigation .navigation-container .links .list-of-links li {
+  .navigation .navigation-container .links li {
     margin-left: 2.5em;
   }
 }
-.navigation .navigation-container .links .list-of-links li img {
+.navigation .navigation-container .links li img {
   width: 100%;
 }
 @media only screen and (min-width: 0) and (max-width: 47.5em) {
-  .navigation .navigation-container .links .list-of-links li {
+  .navigation .navigation-container .links li {
     display: block;
     max-width: 6rem;
   }
 }
-.navigation .navigation-container .links .list-of-links li:nth-child(1) {
+.navigation .navigation-container .links li:nth-child(1) {
   margin: 0;
   margin-left: 6rem;
 }
 @media only screen and (min-width: 0) and (max-width: 75em) {
-  .navigation .navigation-container .links .list-of-links li:nth-child(1) {
+  .navigation .navigation-container .links li:nth-child(1) {
     margin-left: 0;
   }
 }
@@ -667,19 +687,25 @@ html {
   }
 }
 
+.work-details {
+  background: #f9fdfc;
+  padding: 0;
+}
 @media only screen and (min-width: 0) and (max-width: 38em) {
   .work-details {
     width: 90%;
   }
 }
-@media only screen and (min-width: 38em) and (max-width: 57.5em) {
+@media only screen and (min-width: 38em) and (max-width: 64em) {
   .work-details {
     width: 80%;
   }
 }
-@media only screen and (min-width: 57.5em) {
+@media only screen and (min-width: 64em) {
   .work-details {
-    width: 70%;
+    width: 80%;
+    padding: 3rem 5% 3rem 5%;
+    top: 9rem;
   }
 }
 
@@ -1124,17 +1150,32 @@ li {
 .about {
   margin-left: auto;
   margin-right: auto;
+  background: #f9fdfc;
 }
-@media only screen and (min-width: 57.5em) {
+@media only screen and (min-width: 64em) {
+  .about {
+    width: 75%;
+    padding: 3rem 5% 0 5%;
+    top: 9rem;
+  }
+}
+@media only screen and (min-width: 57.5em) and (max-width: 64em) {
   .about {
     width: 75%;
     padding: 0 5%;
+    top: 11rem;
   }
 }
 @media only screen and (min-width: 39.375em) and (max-width: 57.5em) {
   .about {
     width: 90%;
     padding: 0 5%;
+    top: 8rem;
+  }
+}
+@media only screen and (min-width: 0) and (max-width: 39.375em) {
+  .about {
+    top: 6rem;
   }
 }
 @media only screen and (min-width: 0) and (max-width: 57.5em) {
@@ -1269,4 +1310,16 @@ li {
 
 .black {
   background: black;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  z-index: -100;
+  display: block;
+}
+@media only screen and (min-width: 0) and (max-width: 64em) {
+  canvas {
+    display: none;
+  }
 }

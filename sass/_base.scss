@@ -108,13 +108,38 @@ html {
                   padding-top: 0.5rem;
                   justify-content: center;
                }
-               li.image {
+               img.nonactive {
+                  display: block;
+               }
+               img.active {
+                  display: none;
+               }
+            }
+            @include break(47.5em) {
+               li.about-link:hover {
+                  img.nonactive {
+                     display: none;
+                  }
+                  img.active {
+                     display:block;
+                  }
+               }
+               li.works-link:hover {
+                  img.nonactive {
+                     display: none;
+                  }
+                  img.active {
+                     display:block;
+                  }
+               }
+            }
+            li.image {
                   display: none;
                   @include break(0, 47.5em) {
                      display: block;
                   }
                }
-               li { 
+            li { 
                   margin-left: 4rem;
                   width: 11rem;
                   @include break(0, 57.5em) {
@@ -130,18 +155,17 @@ html {
                      display: block;
                      max-width: 6rem;
                   }
-               }
+            }
                li:nth-child(1) {
                   margin: 0;
                   margin-left: 6rem;
                   @include break(0, 75em) {
                      margin-left: 0;
-                  }
-               }
+               
             }
          }
-            
-     }
+      }      
+   }
 }
 
 .pointer {
@@ -246,14 +270,18 @@ html {
 }
 
 .work-details {
+   background: $background;
+   padding: 0;
    @include break(0, 38em) {
       width: 90%;
    }
-   @include break(38em,57.5em) {
+   @include break(38em, 64em) {
       width: 80%;
    }
-   @include break(57.5em) {
-      width: 70%;
+   @include break(64em) {
+      width: 80%;
+      padding: 3rem 5% 3rem 5%;
+      top: 9rem;
    }
 }
 
@@ -597,13 +625,24 @@ li {
 .about {
    margin-left: auto;
    margin-right: auto;
-   @include break(57.5em) {
+   background: $background;
+   @include break(64em) {
+      width: 75%;
+      padding: 3rem 5% 0 5%;
+      top: 9rem;
+   }
+   @include break(57.5em, 64em) {
       width: 75%;
       padding: 0 5%;
+      top:11rem;
    }
    @include break(39.375em, 57.5em) {
       width: 90%;
       padding: 0 5%;
+      top: 8rem;
+   }
+   @include break(0, 39.375em) {
+      top: 6rem;
    }
    @include break(0, 57.5em) {
       width: 100%;
@@ -705,4 +744,14 @@ li {
 }
 .black {
    background: black;
+}
+
+canvas {
+   position: fixed;
+   top: 0;
+   z-index: -100;
+   display: block;
+   @include break(0, 64em) {
+      display: none;
+   }
 }

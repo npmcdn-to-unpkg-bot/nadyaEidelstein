@@ -17,7 +17,9 @@
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
+    <script language="javascript" type="text/javascript" src="js/p5.js"></script>
     <script src="app.js"></script>
+    <script src="js/sketch.js"></script>
     <script src="js/controllers/WelcomeCtrl.js"></script>
     <script src="js/controllers/HomeCtrl.js"></script>
     <script src="js/controllers/WorkDetailsCtrl.js"></script>
@@ -40,13 +42,14 @@
       <div class="menu-icon" id="menu-icon"><img src="images/menuIcon.gif"></div>
       <nav class="links" id="sliding-menu">
          <ul class="list-of-links">
-            <li class="lin"><a href="#/about"><img id="about" src="images/about1.gif" alt="About"></a></li>
-            <li class="lin"><a href="#/home"><img  id="works" src="images/works1.gif" alt="Works"></a></li>
-            <li class="lin image"><a href="https://www.instagram.com/yabloko28/" target="_blank"><img class="nonactive" src="images/shop1.gif" alt="Shop"></a></li>
+            <li class="lin about-link"><a href="#/about"><img class="nonactive" id="about" src="images/about1.gif" alt="About">
+            <img id="about" class="active" src="images/about-active.gif" alt="About"></a></li>
+            <li class="lin works-link"><a href="#/home"><img class="nonactive" id="works" src="images/works1.gif" alt="Works"><img class="active" id="works" src="images/works-active.gif" alt="Works"></a></li>
+            <li class="lin image"><a href="https://www.etsy.com/ca/shop/NadyasCreatures?ref=pr_shop_more" target="_blank"><img class="nonactive" src="images/shop1.gif" alt="Shop"></a></li>
          </ul>
       </nav>
       <div class="social_media_container">
-            <a class="image" href="https://www.instagram.com/yabloko28/" target="_blank"><img class="nonactive" src="images/shop.gif" alt="Shop"><img class="active" src="images/shop-active.gif" alt="Shop"></a>
+            <a class="image" href="https://www.etsy.com/ca/shop/NadyasCreatures?ref=pr_shop_more" target="_blank"><img class="nonactive" src="images/shop.gif" alt="Shop"><img class="active" src="images/shop-active.gif" alt="Shop"></a>
             <a class="instagram" href="https://www.instagram.com/yabloko28/" target="_blank"></a>
             <a class="facebook" href="https://www.facebook.com/nadya.peeps.1?ref=bookmarks" target="_blank"></a>
             <a class="pinterest" href="https://www.pinterest.com/yabloko28/" target="_blank"></a>
