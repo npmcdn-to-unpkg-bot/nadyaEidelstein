@@ -230,7 +230,7 @@ html {
    position: relative;
    top: 11em;
    @include break(0, 50em) {
-      top: 6em;
+      top: 8em;
       max-width: 90%;
    }
    @include break(47.5em, 50em) {
@@ -243,6 +243,18 @@ html {
    margin-right: auto;
    margin-left: auto;
    height: 100%;
+}
+
+.work-details {
+   @include break(0, 38em) {
+      width: 90%;
+   }
+   @include break(38em,57.5em) {
+      width: 80%;
+   }
+   @include break(57.5em) {
+      width: 70%;
+   }
 }
 
 footer {
@@ -322,10 +334,12 @@ li {
                position: absolute;
                left: 0%;
                margin-bottom: 35%;
+               margin-top: 0;
             }
             @include break(0px, 57.5em) {
-               display: none;
+               display: block;
                bottom: 0;
+               margin-top: 1rem;
             }
             h2 {
                font-size: 1.1em;
@@ -539,10 +553,10 @@ li {
             @include icon-grid(7, 2%);
          }
          @include break(25em, 39.375em) {
-            @include icon-grid(4, 5%);
+            @include icon-grid(5, 5%);
          }
          @include break(0px, 25em) {
-            @include icon-grid(3, 5%);
+            @include icon-grid(4, 5%);
          }
          img {
             width: 100%;
@@ -565,7 +579,7 @@ li {
       margin-top: 3em;
    }
    @include break(41.25em, 57.5em) {
-      width: 80%;
+      width: 100%;
       margin-top: 2em;
    }
    @include break(0, 41.25em) {

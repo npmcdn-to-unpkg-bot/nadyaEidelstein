@@ -81,7 +81,7 @@ $(document).ready(function() {
 
     $(".navigation").mouseover(function() {
 	    if (document.body.scrollTop > 50 && shrunk && $(window).width() > 800) {
-		    $(".lin").animate({width: '12em'}, 500);
+		    $(".lin").animate({width: '11rem'}, 500);
 		    if ($(window).width() < 768) {
 		    	$(".sm").css("display", "inline-block");
 		    }
@@ -90,30 +90,11 @@ $(document).ready(function() {
     })
     $(".navigation").mouseleave(function() {
         if (document.body.scrollTop > 50 && !shrunk && $(window).width() > 800) {
-		    $(".lin").animate({width: '5em'}, 500);
+		    $(".lin").animate({width: '8rem'}, 500);
 		    if ($(window).width() < 768) {
 		    	$(".sm").css("display", "block");
 		    }
 	        shrunk = true;
 	    } 
     })
-
-    // $("#works").hover(
-    //     function()
-    //     {
-    //         $(this).attr("src", "images/works-gif.gif");
-    //     },
-    //     function()
-    //     {
-    //         $(this).attr("src", "images/works.gif");
-    // });
-    // $("#about").hover(
-    //     function()
-    //     {
-    //         $(this).attr("src", "images/about-gif.gif");
-    //     },
-    //     function()
-    //     {
-    //         $(this).attr("src", "images/about.gif");
-    // });
 })

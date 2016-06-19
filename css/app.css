@@ -652,7 +652,7 @@ html {
 }
 @media only screen and (min-width: 0) and (max-width: 50em) {
   .main {
-    top: 6em;
+    top: 8em;
     max-width: 90%;
   }
 }
@@ -664,6 +664,22 @@ html {
 @media only screen and (min-width: 50em) and (max-width: 87.5em) {
   .main {
     max-width: 75%;
+  }
+}
+
+@media only screen and (min-width: 0) and (max-width: 38em) {
+  .work-details {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 38em) and (max-width: 57.5em) {
+  .work-details {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 57.5em) {
+  .work-details {
+    width: 70%;
   }
 }
 
@@ -776,12 +792,14 @@ li {
     position: absolute;
     left: 0%;
     margin-bottom: 35%;
+    margin-top: 0;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 57.5em) {
   .grid .icon a .overlay {
-    display: none;
+    display: block;
     bottom: 0;
+    margin-top: 1rem;
   }
 }
 .grid .icon a .overlay h2 {
@@ -1041,6 +1059,18 @@ li {
 }
 @media only screen and (min-width: 25em) and (max-width: 39.375em) {
   .info-navigation .thumbnails li {
+    width: 16%;
+  }
+  .info-navigation .thumbnails li:nth-child(n) {
+    margin-bottom: 5%;
+    margin-right: 5%;
+  }
+  .info-navigation .thumbnails li:nth-child(5n) {
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 25em) {
+  .info-navigation .thumbnails li {
     width: 21.25%;
   }
   .info-navigation .thumbnails li:nth-child(n) {
@@ -1048,18 +1078,6 @@ li {
     margin-right: 5%;
   }
   .info-navigation .thumbnails li:nth-child(4n) {
-    margin-right: 0;
-  }
-}
-@media only screen and (min-width: 0px) and (max-width: 25em) {
-  .info-navigation .thumbnails li {
-    width: 30%;
-  }
-  .info-navigation .thumbnails li:nth-child(n) {
-    margin-bottom: 5%;
-    margin-right: 5%;
-  }
-  .info-navigation .thumbnails li:nth-child(3n) {
     margin-right: 0;
   }
 }
@@ -1087,7 +1105,7 @@ li {
 }
 @media only screen and (min-width: 41.25em) and (max-width: 57.5em) {
   .text {
-    width: 80%;
+    width: 100%;
     margin-top: 2em;
   }
 }
