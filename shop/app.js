@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	etsy_api();
+
 });
 
 function images_response(data){
@@ -32,7 +33,7 @@ function etsy_api(){
 
 			var output = '';
 			$.each(data.results, function(key, val) {
-				output += '<li class="product">' + '<a class="readMore">' + '<image src="' + val.MainImage.url_570xN + '">';
+				output += '<li class="product grid-item">' + '<a class="readMore">' + '<image src="' + val.MainImage.url_570xN + '">';
 				output += '<div class="product-info">' + '<h3 class="title">' + val.title + '</h3>';
 				output += '<p>' + val.price + " CAD" + '</p>' + '</div>';
 				output += '</a>' + '</li>';
@@ -51,8 +52,40 @@ function etsy_api(){
 					}
 				};
 				$description.html(products[index].description);
+
 			});
-	    },
+
+		    $('.grid').imagesLoaded( function(){
+    			console.log('work');
+				$('.grid').isotope({
+				  layoutMode: 'packery',
+				  itemSelector: '.grid-item',
+				  packery: {
+				    gutter: 20
+				  }
+				}); 
+    		})
+   //  		var $grid = $('.grid').imagesLoaded( function() {
+			//   $grid.isotope({
+			// 	  layoutMode: 'packery',
+			// 	  itemSelector: '.grid-item',
+			// 	  percentPosition: true,
+			// 	  packery: {
+			// 	    gutter: '.gutter-sizer'
+			// 	  }
+			//   });
+			// });
+			// var $grid = $('.grid').imagesLoaded( function() {
+			//   $grid.isotope({
+			//     itemSelector: '.grid-item',
+			//     percentPosition: true,
+			//     masonry: {
+			//       columnWidth: '.grid-sizer'
+			//     }
+			//   });
+			// });
+		},
+
 		error:function(data){
 			console.log(data);
 		}

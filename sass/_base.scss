@@ -765,23 +765,30 @@ canvas {
    .products {
       margin: 0;
       padding: 0;
+      .grid-item { 
+         width: 46%;
+         margin: 1.5%;
+         float: left;
+      }
       .readMore {
          position: relative;
+         img {
+            width: 100%;
+            border-radius: 5px;
+         }
          .product-info {
             display: none;
          }
       }
       .readMore:hover {
-         img {
-            opacity: 0.5;
-         }
          .product-info {
             display: block;
             border-radius: 5px;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.9);
             position: absolute;
             bottom: 0;
-            width: 100%;
+            width: 90%;
+            margin: 5%;
             z-index: 1;
             outline: 0.15em solid #dbdd02;
             outline-offset: -1em;
