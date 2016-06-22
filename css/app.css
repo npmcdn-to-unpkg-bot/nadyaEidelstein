@@ -448,7 +448,12 @@ html {
     align-items: center;
   }
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 90.625em) {
+  .navigation .navigation-container {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 64em) and (max-width: 90.625em) {
   .navigation .navigation-container {
     width: 75%;
   }
@@ -1327,4 +1332,31 @@ canvas {
   canvas {
     display: none;
   }
+}
+
+.shop .products {
+  margin: 0;
+  padding: 0;
+}
+.shop .products .readMore {
+  position: relative;
+}
+.shop .products .readMore .product-info {
+  display: none;
+}
+.shop .products .readMore:hover img {
+  opacity: 0.5;
+}
+.shop .products .readMore:hover .product-info {
+  display: block;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  outline: 0.15em solid #dbdd02;
+  outline-offset: -1em;
+  padding: 2rem;
+  text-align: center;
 }
